@@ -1,0 +1,28 @@
+:root{
+    --main-bg-color: #2729b3;
+}
+
+.background-dark-blue{
+    background-color: var(--main-bg-color);
+}
+
+.navbar-links{
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.navbar-links:hover{
+    border: 2px white solid;
+}
+
+.nav-link {
+    position: relative;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+}
+
+.nav-link:hover {
+    border: 1px solid white; /* Add white border on hover */
+    border-radius: 4px; /* Optional: Add border radius for a rounded border */
+}

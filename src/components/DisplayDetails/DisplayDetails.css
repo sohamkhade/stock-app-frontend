@@ -1,0 +1,21 @@
+:root{
+    --main-bg-color: #2729b3;
+}
+
+
+.main-color{
+    color: var(--main-bg-color);
+}
+
+.border-main-color{
+    border-bottom-color: var(--main-bg-color);
+}
+
+.MuiTabs-scrollButtons.Mui-disabled {
+    opacity: 0.3 !important;
+}
+
+.Mui-selected{
+    color: #2729b3 !important;
+    border-color: #2729b3 !important;
+}
