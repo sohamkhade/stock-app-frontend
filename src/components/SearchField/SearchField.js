@@ -194,7 +194,7 @@ const SearchField = (props) => {
             setName(name);
             setLoading(true);
             window.localStorage.clear();
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company/search/${name}`, { signal })
+            fetch(`https://stock-web-app-node-backend.vercel.app/company/search/${name}`, { signal })
                 .then(response => response.json())
                 .then(data => {
                     setSearchNameList(data);
@@ -218,7 +218,7 @@ const SearchField = (props) => {
         if(name === ""){
             setEmptyMessage(true);
         }else{
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company/check/${name}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/company/check/${name}`)
                 .then(res => res.json())
                 .then(data => {
                     if(data === "no data"){

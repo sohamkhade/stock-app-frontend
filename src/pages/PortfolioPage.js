@@ -20,7 +20,7 @@ const PortfolioPage = () => {
 
     const [PortfolioFetchedData, setPortfolioFetchedData] = useState([]);
     useEffect(() => {
-        fetch('https://assignment-3-backend-418623.uc.r.appspot.com/portfolio/data')
+        fetch('https://stock-web-app-node-backend.vercel.app/portfolio/data')
             .then(res => res.json())
             .then(data => {
                 setTimeout(async () => {
@@ -37,7 +37,7 @@ const PortfolioPage = () => {
 
 
     useEffect(() => {
-        fetch('https://assignment-3-backend-418623.uc.r.appspot.com/portfolio/balance')
+        fetch('https://stock-web-app-node-backend.vercel.app/portfolio/balance')
             .then(res => res.json())
             .then(data => {
                 // console.log(data);
@@ -61,7 +61,7 @@ const PortfolioPage = () => {
 
     const fetchDataAndUpdatePortfolio = async () => {
         const promises = dataFetched.map(async (item) => {
-            const res = await fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/portfolio/market_value/${item.ticker}`);
+            const res = await fetch(`https://stock-web-app-node-backend.vercel.app/portfolio/market_value/${item.ticker}`);
             const dataValue = await res.json();
             item.change = dataValue.d;
             item.current_price = dataValue.c;
@@ -74,7 +74,7 @@ const PortfolioPage = () => {
     };
 
     const FetchPortfolioData = () => {
-        fetch('https://assignment-3-backend-418623.uc.r.appspot.com/portfolio/data')
+        fetch('https://stock-web-app-node-backend.vercel.app/portfolio/data')
             .then(res => res.json())
             .then(async data => {
                 setPortfolioData(data);
@@ -117,7 +117,7 @@ const PortfolioPage = () => {
 
     const buyFunction = (data) => {
         try {
-            fetch('https://assignment-3-backend-418623.uc.r.appspot.com/portfolio/add-stock', {
+            fetch('https://stock-web-app-node-backend.vercel.app/portfolio/add-stock', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
@@ -152,7 +152,7 @@ const PortfolioPage = () => {
 
     const sellQuantityFunction = (data) => {
         try {
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/stock/in-portfolio/${data}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/stock/in-portfolio/${data}`)
                 .then(res => res.json())
                 .then(data => {
                     setSellQuantity(data);
@@ -167,7 +167,7 @@ const PortfolioPage = () => {
 
     const sellFunction = (data) => {
         try {
-            fetch('https://assignment-3-backend-418623.uc.r.appspot.com/portfolio/sell-stock', {
+            fetch('https://stock-web-app-node-backend.vercel.app/portfolio/sell-stock', {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({

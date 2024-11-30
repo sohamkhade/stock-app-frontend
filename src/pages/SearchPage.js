@@ -276,7 +276,7 @@ const SearchPage = () => {
 
     const getStockDetails = () => {
         if (tickerName !== "") {
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/stock-details/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/stock-details/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     setStockDetails(data);
@@ -290,7 +290,7 @@ const SearchPage = () => {
 
     const getSummmaryData = () => {
         if (tickerName !== "") {
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company/summary-data/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/company/summary-data/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     setSummaryData(data);
@@ -304,7 +304,7 @@ const SearchPage = () => {
 
     const getSummaryCartData = () => {
         if(tickerName !== ""){
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/summary/charts/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/summary/charts/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     const arr = data.results;
@@ -320,7 +320,7 @@ const SearchPage = () => {
 
     const getNewsData = () => {
         if (tickerName !== "") {
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company-news/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/company-news/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     setTopNewsData(data);
@@ -334,7 +334,7 @@ const SearchPage = () => {
 
     const getCharts = () => {
         if (tickerName !== "") {
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/highcharts/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/highcharts/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     if (data !== null)
@@ -350,7 +350,7 @@ const SearchPage = () => {
 
     const getInsigtsData = () => {
         if (tickerName !== "") {
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company/sentiment/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/company/sentiment/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     setInsights(data);
@@ -360,7 +360,7 @@ const SearchPage = () => {
                     console.log("fetch error in insights call", e);
                 });
 
-            fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company/earnings/${tickerName}`)
+            fetch(`https://stock-web-app-node-backend.vercel.app/company/earnings/${tickerName}`)
                 .then(res => res.json())
                 .then(data => {
                     setSpline(data);

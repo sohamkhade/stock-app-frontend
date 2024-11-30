@@ -13,7 +13,7 @@ const WatchListPage = () => {
     const [dataFetch, setDataFetch] = useState([]);
     const [watchlistData, setWatchlistData] = useState([]);
     useEffect(() => {
-        fetch('https://assignment-3-backend-418623.uc.r.appspot.com/watchlist/data')
+        fetch('https://stock-web-app-node-backend.vercel.app/watchlist/data')
             .then(res => res.json())
             .then(data => {
                 setTimeout(() => {
@@ -32,7 +32,7 @@ const WatchListPage = () => {
     }, [dataFetch]);
 
     const FetchWatchList = () => {
-        fetch('https://assignment-3-backend-418623.uc.r.appspot.com/watchlist/data')
+        fetch('https://stock-web-app-node-backend.vercel.app/watchlist/data')
             .then(res => res.json())
             .then(data => {
                     setWatchlist(data);
@@ -44,7 +44,7 @@ const WatchListPage = () => {
 
     const fetchDataAndUpdateWatchList = async () => {
         const promises = dataFetch.map(async (item) => {
-            const res = await fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/watchlist/current/${item.company_ticker}`);
+            const res = await fetch(`https://stock-web-app-node-backend.vercel.app/watchlist/current/${item.company_ticker}`);
             const dataValue = await res.json();
             item.change = dataValue.d;
             item.current_price = dataValue.c;
@@ -59,7 +59,7 @@ const WatchListPage = () => {
 
     const handleRemoveFromWatchlist = ({index, name}) => {
         // Update the local state of watchlist to reflect the change
-        fetch('https://assignment-3-backend-418623.uc.r.appspot.com/watchlist/delete', {
+        fetch('https://stock-web-app-node-backend.vercel.app/watchlist/delete', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

@@ -74,7 +74,7 @@ const Insights_column_chart = (props) => {
     }, [props.ticker]);
 
     const fetchColumnChart = () => {
-        fetch(`https://assignment-3-backend-418623.uc.r.appspot.com/company/recommendations/${ticker}`)
+        fetch(`https://stock-web-app-node-backend.vercel.app/company/recommendations/${ticker}`)
             .then( res => res.json())
             .then( data => {
                 const mappedData = data.map(item => ({
